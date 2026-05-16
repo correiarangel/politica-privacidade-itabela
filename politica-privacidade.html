@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — iTabela</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* 
+      iTabela Web Design System — Human Design Tokens 
+      Fibonacci: 4, 8, 13, 21, 34, 55, 89
+    */
+    :root {
+      --primary: #009C3B;
+      --primary-dark: #006B29;
+      --secondary: #FFDF00;
+      --accent: #002776;
+      --text: #1A1A2E;
+      --text-light: #595750;
+      --bg: #FAFAF8;
+      --card-bg: #FFFFFF;
+      --border: #E8E6DF;
+      --radius: 13px;
+      --shadow: 0 4px 21px rgba(0, 0, 0, 0.05);
+      
+      /* Fibonacci Spacing */
+      --sp-xs: 4px;
+      --sp-sm: 8px;
+      --sp-md: 13px;
+      --sp-lg: 21px;
+      --sp-xl: 34px;
+      --sp-xxl: 55px;
+      --sp-huge: 89px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.618;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Gradient Top Bar */
+    .top-bar {
+      height: var(--sp-sm);
+      width: 100%;
+      background: linear-gradient(to right, #009C3B 0%, #FFDF00 50%, #002776 100%);
+      position: fixed;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: var(--sp-huge) auto;
+      padding: 0 var(--sp-lg);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: var(--sp-xxl);
+      border: 1px solid var(--border);
+    }
+
+    header {
+      margin-bottom: var(--sp-xxl);
+      text-align: center;
+    }
+
+    .brand {
+      display: inline-block;
+      font-family: 'Bitter', serif;
+      font-weight: 900;
+      font-size: 34px;
+      color: var(--accent);
+      margin-bottom: var(--sp-sm);
+      letter-spacing: -1px;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    h1 {
+      font-family: 'Bitter', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: var(--sp-md);
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--text-light);
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      gap: var(--sp-md);
+      margin-bottom: var(--sp-xl);
+    }
+
+    .meta b {
+      color: var(--primary);
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: var(--sp-xl) 0;
+    }
+
+    h2 {
+      font-family: 'Bitter', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: var(--sp-xl);
+      margin-bottom: var(--sp-md);
+    }
+
+    p {
+      margin-bottom: var(--sp-lg);
+    }
+
+    ul, ol {
+      margin-bottom: var(--sp-lg);
+      padding-left: var(--sp-xl);
+    }
+
+    li {
+      margin-bottom: var(--sp-sm);
+    }
+
+    blockquote {
+      background-color: #FFFDE6;
+      border-left: 4px solid var(--secondary);
+      padding: var(--sp-lg);
+      margin: var(--sp-xl) 0;
+      border-radius: 0 var(--sp-sm) var(--sp-sm) 0;
+      font-style: italic;
+    }
+
+    blockquote strong {
+      color: #806E00;
+      display: block;
+      margin-bottom: var(--sp-xs);
+      font-style: normal;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-sm);
+    }
+
+    .contact-list a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .contact-list a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: var(--sp-xl);
+      color: var(--text-light);
+      font-size: 14px;
+      padding-bottom: var(--sp-xxl);
+    }
+
+    /* Responsive Refinements */
+    @media (max-width: 600px) {
+      .container {
+        margin-top: var(--sp-xl);
+        padding: 0 var(--sp-sm);
+      }
+      .card {
+        padding: var(--sp-lg) var(--sp-md);
+        border-radius: var(--sp-sm);
+      }
+      .brand {
+        font-size: 26px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 21px;
+      }
+      .meta {
+        flex-direction: column;
+        gap: var(--sp-xs);
+      }
+      .meta span:nth-child(2) {
+        display: none; /* Hide the bullet separator */
+      }
+      blockquote {
+        padding: var(--sp-md);
+        margin: var(--sp-lg) 0;
+      }
+    }
+
+    @media (max-width: 400px) {
+      body {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .card {
+        padding: var(--sp-md) var(--sp-sm);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <div class="container">
+    <div class="card">
+      <header>
+        <div class="brand">i<span>Tabela</span></div>
+        <h1>Política de Privacidade</h1>
+        <div class="meta">
+          <span>Versão <b>1.0</b></span>
+          <span>•</span>
+          <span>Vigência: <b>11 de maio de 2026</b></span>
+        </div>
+      </header>
+
+      <section>
+        <h2>1. Considerações Gerais</h2>
+        <p>
+          A sua privacidade é importante para nós. É política do <strong>iTabela</strong>
+          respeitar a sua privacidade em relação a qualquer informação pessoal que
+          possamos coletar durante o uso do aplicativo iTabela.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>2. Coleta e Uso de Informações Pessoais</h2>
+        <p>
+          Solicitamos informações pessoais apenas quando realmente precisamos delas para
+          lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu
+          conhecimento e consentimento. Também informamos por que estamos coletando as
+          informações e como serão utilizadas.
+        </p>
+        <p>
+          Apenas retemos as informações coletadas pelo tempo necessário para fornecer o
+          serviço solicitado. Quando armazenamos dados, protegemo-los dentro de meios
+          comercialmente aceitáveis para evitar perdas, roubos, bem como acesso,
+          divulgação, cópia, uso ou modificação não autorizados.
+        </p>
+        <p>
+          Não compartilhamos informações de identificação pessoal publicamente ou com
+          terceiros, exceto quando exigido por lei.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>3. Isenção de Responsabilidade — Links e Sites Externos</h2>
+        <blockquote>
+          <strong>⚠ ATENÇÃO:</strong> Leia com atenção antes de clicar em qualquer
+          link externo disponível no aplicativo.
+        </blockquote>
+        <p>
+          O aplicativo iTabela pode conter links para sites externos de terceiros —
+          incluindo mapas, notícias, parceiros e redes sociais — que <strong>não são
+          operados, controlados ou supervisionados pelo iTabela</strong>.
+        </p>
+        <p>
+          O iTabela atua <strong>unicamente como um agregador de conteúdos</strong> e:
+        </p>
+        <ul>
+          <li><strong>Não</strong> tem controle sobre as políticas de privacidade dos sites externos;</li>
+          <li><strong>Não</strong> tem controle sobre os termos de uso dos sites externos;</li>
+          <li><strong>Não</strong> tem controle sobre as práticas de segurança dos sites externos;</li>
+          <li><strong>Não</strong> pode garantir nem aceitar responsabilidade por eventuais danos, riscos ou infrações advindos da navegação em sites de terceiros.</li>
+        </ul>
+        <p>
+          O acesso a qualquer link externo fornecido pelo iTabela é feito por
+          <strong>conta e risco exclusivos do usuário</strong>. Ao acessar um link
+          externo, o usuário isenta expressamente o iTabela de qualquer
+          responsabilidade civil ou processual relacionada ao acesso a sites de
+          terceiros.
+        </p>
+        <p>
+          Na primeira vez que o usuário tentar acessar um link externo pelo aplicativo,
+          um aviso formal será exibido e a aceitação dos riscos será registrada
+          localmente no dispositivo.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>4. Recusa de Informações Pessoais</h2>
+        <p>
+          Você é livre para recusar a nossa solicitação de informações pessoais,
+          entendendo que talvez não possamos fornecer alguns dos serviços desejados.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>5. Publicidade e Cookies</h2>
+        <p>
+          O iTabela pode utilizar serviços de publicidade (ex.: Google AdSense) que
+          empregam cookies para veicular anúncios mais relevantes e limitar o número
+          de vezes que um determinado anúncio é exibido. Esses cookies rastreiam
+          anonimamente os interesses do usuário para apresentar conteúdo pertinente.
+        </p>
+        <p>
+          Parceiros podem anunciar em nosso nome e cookies de rastreamento de afiliados
+          nos permitem identificar se o usuário acessou o aplicativo por meio de um
+          site parceiro.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>6. Compromisso do Usuário</h2>
+        <p>
+          O usuário se compromete a fazer uso adequado dos conteúdos e das informações
+          que o iTabela oferece. São vedadas as seguintes condutas:
+        </p>
+        <ol type="a">
+          <li>Envolver-se em atividades ilegais ou contrárias à boa-fé e à ordem pública;</li>
+          <li>Difundir propaganda ou conteúdo de natureza racista, xenofóbica, pornografia ilegal, apologia ao terrorismo ou atentatória aos direitos humanos;</li>
+          <li>Causar danos aos sistemas físicos (hardware) e lógicos (software) do iTabela, de seus fornecedores ou de terceiros.</li>
+        </ol>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>7. Alterações desta Política</h2>
+        <p>
+          O iTabela reserva-se o direito de modificar esta Política de Privacidade a
+          qualquer momento. Alterações significativas serão comunicadas ao usuário por
+          meio do aplicativo.
+        </p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>8. Contato</h2>
+        <p>
+          Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento
+          de seus dados pessoais, entre em contato conosco:
+        </p>
+        <ul class="contact-list">
+          <li><strong>E-mail:</strong> <a href="mailto:wmdigitaltechs@gmail.com">wmdigitaltechs@gmail.com</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/correiarangel" target="_blank" rel="noopener">github.com/correiarangel</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 iTabela. Esta política é efetiva a partir de 11 de maio de 2026.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
